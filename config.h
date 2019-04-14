@@ -71,6 +71,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmen
 static const char *termcmd[]  = { "st", NULL };
 static const char *exitcmd[] = { "dmenu_exit", NULL};
 static const char *emojicmd[] = { "dmenu_emoji", NULL};
+//static const char *scrotcmd[] = { "scrot", "-s", "-e", "\'mv $f ~/Pictures/Screenshots/\'"};
+static const char *scrotcmd[] = { "scrot", "-s", "NULL"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -107,6 +109,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = exitcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = scrotcmd } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emojicmd } }
 };
 
